@@ -1,0 +1,7 @@
+isics_faq_list:
+    pattern:  /{id}
+    defaults: { _controller: "IsicsFAQBundle:Main:list", id: null }
+
+isics_faq_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "IsicsFAQBundle:Main:delete" }

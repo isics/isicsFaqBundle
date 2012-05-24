@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>Frequently Answered Question</source>
+                <target>Foire Aux Questions</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>New Question</source>
+                <target>Nouvelle Question</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>Modify</source>
+                <target>Modifier</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>Delete</source>
+                <target>Supprimer</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>Save</source>
+                <target>Enregistrer</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>Cancel</source>
+                <target>Annuler</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>Title</source>
+                <target>Titre</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>Date</source>
+                <target>Date</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>Answer</source>
+                <target>Réponse</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

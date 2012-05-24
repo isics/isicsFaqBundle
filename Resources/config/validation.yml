@@ -1,0 +1,9 @@
+Isics\FAQBundle\Entity\Question:
+    properties:
+        title:
+            - NotBlank: ~
+        date:
+            - Date: ~
+            - NotBlank: ~
+        answer:
+            - NotBlank: ~

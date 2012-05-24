@@ -1,0 +1,46 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+    {% trans %}Frequently Answered Question{% endtrans %}
+{% endblock %}
+
+{% block body %}
+    <h1>{% trans %}Frequently Answered Question{% endtrans %}</h1>
+
+    {% block questions %}
+        {% if is_granted('ROLE_FAQ_ADMIN') %}
+            <form action="{{ path('isics_faq_list', {'id': id}) }}" method="post" {{ form_enctype(form) }}>
+        {% endif %}
+        <dl>
+            {% for question in questions %}
+                {% block question %}
+                    {% if id == question.id and is_granted('ROLE_FAQ_ADMIN') %}
+                        {{ form_widget(form) }}
+                        <input type="submit" value="{{ 'Save'|trans }}" />
+                        <a href="{{ path('isics_faq_list') }}">{{ 'Cancel'|trans }}</a>
+                    {% else %}
+                        <dt>
+                            {% if question.date %}
+                                {{ question.date|date('Y-m-d') }}
+                            {% endif %} : 
+                            {{ question.title }}
+                            {% if is_granted('ROLE_FAQ_ADMIN') %}
+                                <a href="{{ path('isics_faq_list', { 'id': question.id }) }}">{{ 'Modify'|trans }}</a>
+                                <a href="{{ path('isics_faq_delete', { 'id': question.id }) }}">{{ 'Delete'|trans }}</a>
+                            {% endif %}
+                        </dt>
+                        <dd>{{ question.answer }}</dd>
+                    {% endif %}
+                {% endblock %}
+            {% endfor %}
+        </dl>
+    {% endblock %}
+    {% if id is null and is_granted('ROLE_FAQ_ADMIN') %}
+        <h2>{{ 'New Question'|trans }}</h2>
+        {{ form_widget(form) }}
+        <input type="submit" value="{{ 'Save'|trans }}" />
+    {% endif %}
+    {% if is_granted('ROLE_FAQ_ADMIN') %}
+        </form>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    
+    <parameters>
+        <parameter key="isics_faq.form.handler.question_form_handler.class">Isics\FAQBundle\Form\Handler\QuestionFormHandler</parameter>
+        <parameter key="isics_faq.form.type.question_type.class">Isics\FAQBundle\Form\Type\QuestionType</parameter>
+        <parameter key="isics_faq.manager.question_manager.class">Isics\FAQBundle\Manager\QuestionManager</parameter>
+    </parameters>
+
+    <services>
+        <service id="isics_faq.manager.question_manager" class="%isics_faq.manager.question_manager.class%">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+        </service>
+        
+        <service id="isics_faq.form.type.question_type" class="%isics_faq.form.type.question_type.class%"></service>
+        <service id="isics_faq.form.type.question_type.name" factory-method="getName" factory-service="isics_faq.form.type.question_type" class="%isics_faq.form.type.question_type.class%"></service>
+        
+        <service id="isics_faq.form.question" factory-method="createNamed" factory-service="form.factory" class="Symfony\Component\Form\Form">
+            <argument type="service" id="isics_faq.form.type.question_type"/>
+            <argument type="service" id="isics_faq.form.type.question_type.name" />
+        </service>
+        
+        <service id="isics_faq.form.handler.question_form_handler" class="%isics_faq.form.handler.question_form_handler.class%" scope="request">
+            <argument type="service" id="isics_faq.form.question" />
+            <argument type="service" id="request" />
+            <argument type="service" id="isics_faq.manager.question_manager" />
+        </service>
+        
+    </services>
+   
+</container>
