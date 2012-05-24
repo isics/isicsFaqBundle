@@ -8,12 +8,11 @@ Installation
 
 ## Step 1: Installation using the `bin/vendors.php` method
 
-If you're using the `bin/vendors.php` method to manage your vendor libraries,
-add the following entries to the `deps` in the root of your project file:
+Add the following entries to the `deps` in the root of your project file:
 
 ```
 [IsicsFAQBundle]
-    git=https://lccoppee@github.com/isics/isicsFaqBundle.git
+    git=https://github.com/isics/isicsFaqBundle.git
     target=bundles/Isics/FAQBundle
 ```
 
@@ -25,7 +24,6 @@ $ ./bin/vendors
 
 ## Step2: Configure the autoloader
 
-Add the following entries to your autoloader:
 
 ``` php
 <?php
@@ -55,8 +53,6 @@ public function registerBundles()
 ```
 
 ## Step4: Register the bundle's routes
-
-Finally, add the following to your routing file:
 
 ``` yaml
 # app/config/routing.yml
