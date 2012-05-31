@@ -23,7 +23,7 @@
                             {% if question.date %}
                                 {{ question.date|date('Y-m-d') }}
                             {% endif %} : 
-                            {{ question.title }}
+                            {{ question.question }}
                             {% if is_granted('ROLE_FAQ_ADMIN') %}
                                 <a href="{{ path('isics_faq_list', { 'id': question.id }) }}">{{ 'Modify'|trans }}</a>
                                 <a href="{{ path('isics_faq_delete', { 'id': question.id }) }}">{{ 'Delete'|trans }}</a>

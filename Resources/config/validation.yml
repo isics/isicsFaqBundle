@@ -1,6 +1,6 @@
 Isics\FAQBundle\Entity\Question:
     properties:
-        title:
+        question:
             - NotBlank: ~
         date:
             - Date: ~

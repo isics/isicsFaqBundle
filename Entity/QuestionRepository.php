@@ -23,7 +23,7 @@ class QuestionRepository extends EntityRepository
             ->getRepository('IsicsFAQBundle:Question')
             ->createQueryBuilder('q')
             ->addOrderBy('q.date', 'DESC')
-            ->addOrderBy('q.title', 'ASC')
+            ->addOrderBy('q.question', 'ASC')
             ->getQuery()
             ->getResult()
         ;

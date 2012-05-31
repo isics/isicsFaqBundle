@@ -22,11 +22,11 @@ class Question
     private $id;
 
     /**
-     * @var string $title
+     * @var string $question
      *
-     * @ORM\Column(name="title", type="string", length=255)
+     * @ORM\Column(name="question", type="text")
      */
-    private $title;
+    private $question;
 
     /**
      * @var date $date
@@ -59,23 +59,23 @@ class Question
     }
 
     /**
-     * Get title
+     * Get question
      *
      * @return string
      */
-    public function getTitle()
+    public function getQuestion()
     {
-        return $this->title;
+        return $this->question;
     }
 
     /**
-     * Set title
+     * Set question
      *
-     * @param string $title
+     * @param string $question
      */
-    public function setTitle($title)
+    public function setQuestion($question)
     {
-        $this->title = $title;
+        $this->question = $question;
     }
 
     /**

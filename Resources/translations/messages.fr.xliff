@@ -27,8 +27,8 @@
                 <target>Annuler</target>
             </trans-unit>
             <trans-unit id="7">
-                <source>Title</source>
-                <target>Titre</target>
+                <source>Question</source>
+                <target>Question</target>
             </trans-unit>
             <trans-unit id="8">
                 <source>Date</source>
